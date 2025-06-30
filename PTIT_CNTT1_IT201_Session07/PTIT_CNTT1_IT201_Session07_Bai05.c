@@ -13,7 +13,7 @@ int partition(int arr[] , int l , int r){
             arr[i] = arr[j] ;
             arr[j] = temp ;
             i++;
-            j++;
+            j--;
         }
         return i;
     }
