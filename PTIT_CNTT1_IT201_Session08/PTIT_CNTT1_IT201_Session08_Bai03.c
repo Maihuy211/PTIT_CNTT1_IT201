@@ -17,20 +17,19 @@ int main(){
     int n;
     printf("nhap so phan tu cho mang: ");
     scanf("%d",&n);
-    int arr[100];
-    printf("nhap cac phan tu cho mang: \n");
-    for(int i = 0 ; i < n ; i++){
-        scanf("%d",&arr[i]);
-    }
-    printf("before: ");
-    for(int i = 0 ; i < n ; i++){
-        printf("%d ",arr[i]);
-    }
-    bubbleSort(arr,n);
-    printf("\n");
-    printf("after: ");
-    for(int i = 0 ; i < n ; i++){
-        printf("%d ",arr[i]);
+    if(n<=0){
+         printf("so luong phan tu khong hop le");
+    }else{
+        int arr[100];
+        printf("nhap cac phan tu cho mang: \n");
+        for(int i = 0 ; i < n ; i++){
+            scanf("%d",&arr[i]);
+        }
+        bubbleSort(arr,n);
+        for(int i = 0 ; i < n ; i++){
+            printf("%d ",arr[i]);
+        }
     }
     return 0;
+    // độ phức tạp thời gian O(n2)
 }
