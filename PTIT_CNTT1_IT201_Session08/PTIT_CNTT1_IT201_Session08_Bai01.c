@@ -18,7 +18,7 @@ int main() {
             break;
         }
     }
-    if(index){
+    if(index!=-1){
        printf("vi tri thu %d",index+1);
     }else{
         printf("khong ton tai phan tu");

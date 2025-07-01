@@ -10,6 +10,41 @@ void insertionSort(int arr[], int n){
         arr[j+1] = key;
     }
 }
+void linearSearch(int arr[], int n ,int x){
+    int index=-1;
+    for(int i = 0 ; i < n ; i++){
+            if(arr[i]==x){
+                index = i ;
+                break;
+            }
+        }
+        if(index!=-1){
+            printf("\ntim kiem tuyen tinh: vi tri thu %d",index+1);
+        }else{
+            printf("tim kiem tuyen tinh: khong ton tai phan tu");
+        }
+}
+void binarySearch(int arr[], int n ,int x){
+    int index = -1;
+    int left = 0;
+    int right = n - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (arr[mid] == x) {
+            index = mid;
+            break;
+        } else if (arr[mid] < x) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    if(index != -1) {
+        printf("\ntim kiem nhi phan : vi tri thu %d", index + 1);
+    } else {
+        printf("\ntim kiem nhi phan : khong ton tai phan tu");
+    }
+}
 int main(){
     int n;
     printf("nhap so phan tu cho mang: ");
@@ -32,38 +67,10 @@ int main(){
             printf("%d ",arr[i]);
         }
         int check;
-        int index = -1 ;
         printf("\nnhap mot so can tim: ");
         scanf("%d",&check);
-        for(int i = 0 ; i < n ; i++){
-            if(arr[i]==check){
-                index = i ;
-                break;
-            }
-        }
-        if(index){
-        printf("\ntim kiem tuyen tinh: vi tri thu %d",index+1);
-        }else{
-            printf("tim kiem tuyen tinh: khong ton tai phan tu");
-        }
-        int left = 0;
-        int right = n - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (arr[mid] == check) {
-                index = mid;
-                break;
-            } else if (arr[mid] < check) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        if (index != -1) {
-            printf("\ntim kiem nhi phan : vi tri thu %d", index + 1);
-        } else {
-            printf("\ntim kiem nhi phan : khong ton tai phan tu");
-        }
+        linearSearch(arr,n,check);
+        binarySearch(arr,n,check);
     }
     return 0;
 }
