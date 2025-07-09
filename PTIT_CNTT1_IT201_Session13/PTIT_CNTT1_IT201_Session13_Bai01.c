@@ -12,6 +12,8 @@ Stack *createStack(int cap){
 
     stack->top = -1;
     stack->cap = cap;
+    
+    stack->stack = (int*)malloc(sizeof(int)*cap);
     return stack;
 
 }
@@ -19,7 +21,7 @@ Stack *createStack(int cap){
 int main(){
     int size = 5;
     Stack *stack = createStack(size);
-    
+
     free(stack);
     return 0;
 }
